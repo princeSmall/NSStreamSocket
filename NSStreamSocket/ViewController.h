@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import <CoreFoundation/CoreFoundation.h>
+#import <sys/socket.h>
+#import <netinet/in.h>
+#define PORT 9000
+@interface ViewController : UIViewController<NSStreamDelegate>
+{
+    int flag;
+}
+@property (nonatomic,retain)NSInputStream * inputStream;
+@property (nonatomic,retain)NSOutputStream * outputSream;
 
 
 @end
